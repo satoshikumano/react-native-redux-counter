@@ -1,59 +1,30 @@
 import React from 'react';
-import { createStore } from 'redux';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { createStore, combineReducers } from 'redux';
+import CounterApp from './CounterApp';
+import { Provider } from 'react-redux';
 
-function counter(state = {}, action) {
+export function counterReducer(state = 0, action) {
   if (action.type === "INCREMENT") {
-    return {
-      ...state,
-      count: state.count + 1
-    };
+    return state + 1;
   }
   else if (action.type === "DECREMENT") {
-    return {
-      ...state,
-      count: state.count - 1
-    };
+    return state - 1;
   }
   else {
     return state;
   }
 }
 
-let store = createStore(counter, {count:0});
+const reducer = combineReducers({count: counterReducer});
+const store = createStore(reducer, {count:0});
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    }
-    store.subscribe(() => {
-        this.setState({count: store.getState().count});
-    });
-  }
   render() {
     return (
-      <View style={styles.container}>
-      <Text>{this.state.count}</Text>
-        <Button
-          onPress={()=>store.dispatch({type:"INCREMENT"})}
-          title='+'
-        />
-        <Button
-          onPress={()=>store.dispatch({type:"DECREMENT"})}
-          title='-'
-        />
-      </View>
+      <Provider store={store}>
+        <CounterApp />
+      </Provider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
