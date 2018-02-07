@@ -23,12 +23,12 @@ and react-redux, and redux-thunk step by step.
 
 - Part of [Redux basics](https://redux.js.org/docs/basics/)
 
-Pleases read the following sections.
+    Pleases read the following sections.
 
-  - [Actions](https://redux.js.org/docs/basics/Actions.html)
-  - [Reducers](https://redux.js.org/docs/basics/Reducers.html)
-  - [Store](https://redux.js.org/docs/basics/Store.html)
-  - [Data Flow](https://redux.js.org/docs/basics/DataFlow.html)
+    - [Actions](https://redux.js.org/docs/basics/Actions.html)
+    - [Reducers](https://redux.js.org/docs/basics/Reducers.html)
+    - [Store](https://redux.js.org/docs/basics/Store.html)
+    - [Data Flow](https://redux.js.org/docs/basics/DataFlow.html)
 
     I feel difficulty when reading the section [Usage with React](https://redux.js.org/docs/basics/UsageWithReact.html)
     and [Example: Todo List](https://redux.js.org/docs/basics/ExampleTodoList.html) and that's why I created this repository.
