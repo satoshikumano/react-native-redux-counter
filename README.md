@@ -83,6 +83,18 @@ Hope that helps to understand how the react-redux bindings work!
 
 You can check the code from the tag [react-redux-async](https://github.com/satoshikumano/react-native-redux-counter/tree/react-redux-async).
 
+Let's see how we deal with the async operation with `redux-thunk` and `applyMiddleWare`.
+
+1. Inject redux-thunk as middleware when [calling createStore](https://github.com/satoshikumano/react-native-redux-counter/blob/react-redux-async/App.js#L20)
+
+2. Define [async increment](https://github.com/satoshikumano/react-native-redux-counter/blob/react-redux-async/CounterApp.js#L40-L47)
+
+3. Add async increment to [mapDispatchToProps](https://github.com/satoshikumano/react-native-redux-counter/blob/react-redux-async/CounterApp.js#L64)
+
+In step 3, you may notice that `incrementAsync` returns function instead of pure javascript action object.
+
+Redux store expect the function that returns the function which takes Redux store `dispatch` function as an argument when we utilize middleware.
+
 ## About file structure.
 
 In this sample, file structures are not aligned with (de fact) standards.
