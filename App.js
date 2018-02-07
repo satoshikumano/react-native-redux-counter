@@ -4,7 +4,7 @@ import CounterApp from './CounterApp';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-export function counterReducer(state = 0, action) {
+function counterReducer(state = 0, action) {
   if (action.type === "INCREMENT") {
     return state + 1;
   }
