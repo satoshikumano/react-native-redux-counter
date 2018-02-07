@@ -17,6 +17,10 @@ class CounterApp extends React.Component {
           title='+'
         />
         <Button
+          onPress={actions.incrementAsync}
+          title='+ (after 1sec.)'
+        />
+        <Button
           onPress={actions.decrement}
           title='-'
         />
@@ -30,6 +34,16 @@ function increment() {
   return {
     type: "INCREMENT"
   }
+}
+
+// Async increment.
+function incrementAsync() {
+  return dispatch => {
+    setTimeout(() => {
+      // Yay! Can invoke sync or async actions with `dispatch`
+      dispatch(increment());
+    }, 1000);
+  };
 }
 
 // Decrement action creator.
@@ -46,7 +60,9 @@ function mapStateToProps(state) {
 
 // Map action creators to component's props so that the actions to be generated/ dispatched when event occurs.
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators({increment:increment, decrement:decrement}, dispatch) }
+  return { actions: bindActionCreators(
+      {increment, incrementAsync, decrement},
+      dispatch) }
 }
 
 // react-redux connect function.

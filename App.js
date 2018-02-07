@@ -1,7 +1,8 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import CounterApp from './CounterApp';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 export function counterReducer(state = 0, action) {
   if (action.type === "INCREMENT") {
@@ -16,7 +17,7 @@ export function counterReducer(state = 0, action) {
 }
 
 const reducer = combineReducers({count: counterReducer});
-const store = createStore(reducer, {count:0});
+const store = createStore(reducer, {count:0}, applyMiddleware(thunk));
 
 export default class App extends React.Component {
   render() {
