@@ -131,20 +131,20 @@ Redux store expect the function that returns the function which takes Redux stor
 ### File structure.
 
 In this sample, file structures are not aligned with (de fact) standards.
+I intentionally minimize the number of files to focus on understanding the interaction
+between the react, redux and react-redux.
 
-Dividing files and place it in proper directory such as `components`, `actions`, `reducers`, `containers`, etc is good in actual development,
-
-But not necessary in the samples for learning and could slower the learning.
+Dividing files and place it in proper directory such as `components`, `actions`, `reducers`, `containers`, etc is good in production level development.
 
 ### Presentation and Container
 
 Many samples divide the UI component into Presentation and Container.
-I decided not to include it in this sample to keep it simple. 
+I decided not to include it in this sample to keep it simple and focus on 
+redux and react-redux.
 
 The concept is explaned [here](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 
-We'll introduce it in the real project, but not necessary to do it in
-redux learning sample as the concepts might be orthogonal.
+It is good to follow the practice in production level development.
 
 ### Using different middleware, Chaining middleware
 
