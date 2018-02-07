@@ -2,7 +2,7 @@
 
 Minimal React-Native sample app using redux and react-redux.
 
-Most of the samples/ tutorials started from redux basic concept and then implement
+Most of the samples/ tutorials started from explanation of redux basic concept and then implement
 the app with react-redux bindings.
 
 However, In my experience, there's difficulty jumping to react-redux bindings
@@ -11,26 +11,40 @@ react-redux's sophisticated APIs might not be easy to understand for beginners.
 
 In this repository, you can see how the counter app can be improved by redux
 and react-redux, and redux-thunk step by step.
-I defined steps bellow.
 
 ## Minimal prerequisite
 
 - [React-Native learn the basics](https://facebook.github.io/react-native/docs/tutorial.html)
 
-- [Redux basics](https://redux.js.org/docs/basics/)
 
-    If you don't feel difficulty when reading `Usage with React` and `Example: Todo List` section,
+- [Redux Core Concepts](https://redux.js.org/docs/introduction/CoreConcepts.html)
 
-    Then just go ahead and try more sophiscated samples or just start your production app!
+- [Redux Principles](https://redux.js.org/docs/introduction/ThreePrinciples.html)
 
-    If you feel difficulty, hope following guide helps.
+- Part of [Redux basics](https://redux.js.org/docs/basics/)
+
+Pleases read the following sections.
+
+  - [Actions](https://redux.js.org/docs/basics/Actions.html)
+  - [Reducers](https://redux.js.org/docs/basics/Reducers.html)
+  - [Store](https://redux.js.org/docs/basics/Store.html)
+  - [Data Flow](https://redux.js.org/docs/basics/DataFlow.html)
+
+    I feel difficulty when reading the section [Usage with React](https://redux.js.org/docs/basics/UsageWithReact.html)
+    and [Example: Todo List](https://redux.js.org/docs/basics/ExampleTodoList.html) and that's why I created this repository.
+
+    If you don't feel difficulty when reading those 2 section,
+    then you may not need this repository.
+    Envy you. Go ahead and try more sophiscated samples or just start your production app!
+
+    If you feel difficulty, hope following guides helps.
 
 ## 1. Counter app without redux.
 
 You can check the code from the tag [react0](https://github.com/satoshikumano/react-native-redux-counter/tree/react0).
 
 Yay!, might be clear and nothing complex.
-   
+
 ## 2. Counter app with redux, withour react-redux.
 
 You can check the code from the tag [redux0](https://github.com/satoshikumano/react-native-redux-counter/tree/redux0).
@@ -131,4 +145,4 @@ redux learning sample as the concepts might be orthogonal.
 
 In this sample, I only use redux-thunk.
 
-There's some other examples in [Redux API Reference](https://redux.js.org/docs/api/applyMiddleware.html)
+There's some examples and explanation of middleware chain in [Redux API Reference](https://redux.js.org/docs/api/applyMiddleware.html)
