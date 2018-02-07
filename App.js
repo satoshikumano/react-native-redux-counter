@@ -1,47 +1,33 @@
 import React from 'react';
-import { createStore } from 'redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
-
-function counter(state = {}, action) {
-  if (action.type === "INCREMENT") {
-    return {
-      ...state,
-      count: state.count + 1
-    };
-  }
-  else if (action.type === "DECREMENT") {
-    return {
-      ...state,
-      count: state.count - 1
-    };
-  }
-  else {
-    return state;
-  }
-}
-
-let store = createStore(counter, {count:0});
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      count: 0
+    this.state = { count: 0 };
+  }
+  increment(prevState) {
+    return {
+      ...prevState,
+      count: prevState.count + 1
     }
-    store.subscribe(() => {
-        this.setState({count: store.getState().count});
-    });
+  }
+  decrement(prevState) {
+    return {
+      ...prevState,
+      count: prevState.count - 1
+    }
   }
   render() {
     return (
       <View style={styles.container}>
       <Text>{this.state.count}</Text>
         <Button
-          onPress={()=>store.dispatch({type:"INCREMENT"})}
+          onPress={() => this.setState(this.increment)}
           title='+'
         />
         <Button
-          onPress={()=>store.dispatch({type:"DECREMENT"})}
+          onPress={() => this.setState(this.decrement)}
           title='-'
         />
       </View>
