@@ -14,9 +14,14 @@ and react-redux, and redux-thunk step by step.
 
 ## Minimal prerequisite
 
+### React Native
+
+- [React-Native quick start](https://facebook.github.io/react-native/docs/getting-started.html)
+
 - [React-Native learn the basics](https://facebook.github.io/react-native/docs/tutorial.html)
 
 
+### Redux
 - [Redux Core Concepts](https://redux.js.org/docs/introduction/CoreConcepts.html)
 
 - [Redux Principles](https://redux.js.org/docs/introduction/ThreePrinciples.html)
